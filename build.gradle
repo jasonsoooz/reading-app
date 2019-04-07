@@ -23,6 +23,13 @@ dependencies {
         exclude group: 'com.fasterxml.jackson.core'
     }
 
+	compile (
+			// To compile jsp files
+			'org.apache.tomcat.embed:tomcat-embed-jasper',
+			// Use gson as preferred JSON http message converter
+			'com.google.code.gson:gson:2.8.5'
+	)
+
 	implementation ('org.springframework.boot:spring-boot-starter-actuator'
 	)
 	
