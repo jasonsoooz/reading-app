@@ -2,3 +2,7 @@ h1 {
   color: white;
   background-color: green;
 }
+
+textarea {
+  width: 100%;
+}
