@@ -23,6 +23,5 @@ http://localhost:8028/app/read
 For now, in HighLightService constructor.  Later will create config page.
 
 ### ToDo
-* Mark words when punctuation present (eg , . ! ? etc)
 * Add clear button
 * Add actuator for health checks

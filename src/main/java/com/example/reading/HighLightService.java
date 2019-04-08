@@ -23,10 +23,13 @@ public class HighLightService {
     }
 
     public String highlightWords(String block) {
-        String[] blockWords = block.split(" ");
+        // Split words by multiple occurrences of white space character "\s" (eg \t \n \r etc)
+        String[] blockWords = block.split("\\s+");
         List<String> results = new ArrayList<>();
         for (String word : blockWords) {
-            if (words.contains(word.toLowerCase())) {
+            // Get rid of any non word characters
+            String wordWithoutPunctuation = word.replaceAll("\\W", "");
+            if (words.contains(wordWithoutPunctuation.toLowerCase())) {
                 results.add(format("%s%s%s","<mark>", word, "</mark>"));
             } else {
                 results.add(word);

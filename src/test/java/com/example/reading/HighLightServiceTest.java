@@ -29,5 +29,23 @@ class HighLightServiceTest {
         assertThat(words).isEqualTo("<mark>Look</mark> <mark>AT</mark> that");
     }
 
-    // FIXME: words with punctuation (eg , . ! ?)
+    @Test
+    @DisplayName("highlight known words with punctuation (eg , . ! ?)")
+    void highlightKnownWords_withPunctuation() {
+        String block = "Look, at. that red! little?";
+
+        String words = displayService.highlightWords(block);
+
+        assertThat(words).isEqualTo("<mark>Look,</mark> <mark>at.</mark> that <mark>red!</mark> <mark>little?</mark>");
+    }
+
+    @Test
+    @DisplayName("highlight known words where word separator is not space (eg tab, multi spaces, etc)")
+    void highlightKnownWords_whereWordSeparatorIsNotSpace() {
+        String block = "Look  at    that";
+
+        String words = displayService.highlightWords(block);
+
+        assertThat(words).isEqualTo("<mark>Look</mark> <mark>at</mark> that");
+    }
 }
