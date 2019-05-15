@@ -12,14 +12,21 @@ public class HighLightService {
     private List<String> words = new ArrayList<>();
 
     public HighLightService() {
-        List<String> week1 = Arrays.asList("look", "me", "at", "i", "is",
+        // Level 1: when? (9 words)
+        List<String> level1 = Arrays.asList("look", "me", "at", "i", "is",
                 "am", "the", "little", "on", "|");
-        words.addAll(week1);
+        words.addAll(level1);
 
-        List<String> week2 = Arrays.asList("see", "red", "you", "blue",
+        // Level 2: when? (14 words)
+        List<String> level2 = Arrays.asList("see", "red", "you", "blue",
                 "dad", "are", "yellow", "said", "here", "for", "green",
-                "come", "mum", "and");
-        words.addAll(week2);
+                "come", "mum", "and", "|");
+        words.addAll(level2);
+
+        // Level 3: Tue 9 Apr 19 (11 words)
+        List<String> level3 = Arrays.asList("up", "in", "father", "baby",
+                "wake", "mother", "bed", "big", "too", "bear", "farm");
+        words.addAll(level3);
     }
 
     public String highlightWords(String block) {
