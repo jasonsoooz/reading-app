@@ -25,8 +25,14 @@ public class HighLightService {
 
         // Level 3: Tue 9 Apr 19 (11 words)
         List<String> level3 = Arrays.asList("up", "in", "father", "baby",
-                "wake", "mother", "bed", "big", "too", "bear", "farm");
+                "wake", "mother", "bed", "big", "too", "bear", "farm", "|");
         words.addAll(level3);
+
+        // Level 4: Mon 20 May 19 (12 words)
+        List<String> level4 = Arrays.asList("comes", "can", "not", "looked",
+                "shouted", "cannot", "bird", "tree", "meow", "asleep",
+                "hungry", "sun");
+        words.addAll(level4);
     }
 
     public String highlightWords(String block) {
